@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
 import SkillsWrapper from "./SkillsWrapper";
+import { Slide } from "react-awesome-reveal";
 
 const skills = [
   { name: "Java Core", value: 100 },
@@ -18,9 +19,7 @@ const skills = [
 
 const SkillWrapper = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(3),
-  ".skill": {
-    
-  },
+  ".skill": {},
   ".progress-bar-wrap": {
     backgroundColor: theme.palette.grey[200],
     borderRadius: theme.shape.borderRadius,
@@ -37,7 +36,11 @@ export default function Skills() {
       <section id="skills" className="skills section-bg pt-5">
         <Container>
           <Box className="section-title" sx={{ textAlign: "left", mb: 4 }}>
-            <Typography variant="h2" gutterBottom  sx={{color:"#122D52", lineHeight:"38px", fontWeight:"700"}}>
+            <Typography
+              variant="h2"
+              gutterBottom
+              sx={{ color: "#122D52", lineHeight: "38px", fontWeight: "700" }}
+            >
               Skills
             </Typography>
             <Typography variant="body1">
@@ -50,36 +53,40 @@ export default function Skills() {
           <Grid container spacing={4} className="skills-content">
             <Grid item xs={12} sm={6} data-aos="fade-up">
               {skills.slice(0, 3).map((skill, index) => (
-                <SkillWrapper key={index}>
-                  <div className="skill">
-                    <span>{skill.name}</span>
-                    <i className="val">{skill.value}%</i>
-                  </div>
-                  <div className="progress-bar-wrap">
-                    <LinearProgress
-                      className="progress-bar"
-                      variant="determinate"
-                      value={skill.value}
-                    />
-                  </div>
-                </SkillWrapper>
+                <Slide direction={"left"}>
+                  <SkillWrapper key={index}>
+                    <div className="skill">
+                      <span>{skill.name}</span>
+                      <i className="val">{skill.value}%</i>
+                    </div>
+                    <div className="progress-bar-wrap">
+                      <LinearProgress
+                        className="progress-bar"
+                        variant="determinate"
+                        value={skill.value}
+                      />
+                    </div>
+                  </SkillWrapper>
+                </Slide>
               ))}
             </Grid>
             <Grid item xs={12} sm={6} data-aos="fade-up" data-aos-delay="100">
               {skills.slice(3).map((skill, index) => (
-                <SkillWrapper key={index}>
-                  <div className="skill">
-                    <span>{skill.name}</span>
-                    <i className="val">{skill.value}%</i>
-                  </div>
-                  <div className="progress-bar-wrap">
-                    <LinearProgress
-                      className="progress-bar"
-                      variant="determinate"
-                      value={skill.value}
-                    />
-                  </div>
-                </SkillWrapper>
+                <Slide direction={"right"}>
+                  <SkillWrapper key={index}>
+                    <div className="skill">
+                      <span>{skill.name}</span>
+                      <i className="val">{skill.value}%</i>
+                    </div>
+                    <div className="progress-bar-wrap">
+                      <LinearProgress
+                        className="progress-bar"
+                        variant="determinate"
+                        value={skill.value}
+                      />
+                    </div>
+                  </SkillWrapper>
+                </Slide>
               ))}
             </Grid>
           </Grid>

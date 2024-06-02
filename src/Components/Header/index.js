@@ -38,43 +38,39 @@ const Header = () => {
         <div>
           <img src={rasm1} alt="Profile" />
           <div className="d-flex">
-            <Button>
-              <Tooltip
-                title={
-                  <Link href="#" variant="body2">
-                    {
-                      "https://www.linkedin.com/in/mehriddin-barnoyev-78a016294/"
-                    }
-                  </Link>
-                }
-              >
-                <LinkedInIcon />
-              </Tooltip>
-            </Button>
-            <Button>
-              <Tooltip
-                title={
-                  <Link href="#" variant="body2">
-                    {"https://t.me/Barn04ev08_06"}
-                  </Link>
-                }
-              >
-                <TelegramIcon />
-              </Tooltip>
-            </Button>
-            <Button>
-              <Tooltip
-                title={
-                  <Link href="#" variant="body2">
-                    {
-                      "https://www.instagram.com/barnoyev_0806?igsh=MW1xa2FqY3gzZ3Bxdg=="
-                    }
-                  </Link>
-                }
-              >
-                <InstagramIcon />
-              </Tooltip>
-            </Button>
+            <Link
+              href="https://www.linkedin.com/in/mehriddin-barnoyev-78a016294/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>
+                <Tooltip title="LinkedIn">
+                  <LinkedInIcon />
+                </Tooltip>
+              </Button>
+            </Link>
+            <Link
+              href="https://t.me/Barn04ev08_06"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>
+                <Tooltip title="Telegram">
+                  <TelegramIcon />
+                </Tooltip>
+              </Button>
+            </Link>
+            <Link
+              href="https://www.instagram.com/barnoyev_0806?igsh=MW1xa2FqY3gzZ3Bxdg=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>
+                <Tooltip title="Instagram">
+                  <InstagramIcon />
+                </Tooltip>
+              </Button>
+            </Link>
           </div>
           <div className="menuItems">
             {menu.map((item, index) => (
@@ -92,15 +88,16 @@ const Header = () => {
           <div className="row">{/* <h1>Barnoyev Mehriddin</h1> */}</div>
           {/* <div className="row">
             </div> */}
-          <Slide>
-           
-          </Slide>
+          <Slide></Slide>
           <Animated
             animationIn="rubberBand"
             animationOut="fadeOut"
             isVisible={true}
           >
-            <div> <p>Barnoyev Mehriddin</p></div>
+            <div>
+              {" "}
+              <p>Barnoyev Mehriddin</p>
+            </div>
           </Animated>
           <div className="mt-5">
             <TypeAnimation
@@ -122,11 +119,11 @@ const Header = () => {
           </div>
         </div>
         <About />
-        <Facts/>
-        <Skills/>
-        <Resume/>
+        <Facts />
+        <Skills />
+        <Resume />
         {/* <Service/> */}
-        <Contact/>
+        <Contact />
       </div>
     </HeaderWrapper>
   );
