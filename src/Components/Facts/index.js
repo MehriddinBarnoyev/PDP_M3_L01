@@ -84,7 +84,7 @@ export default function Facts() {
                 >
                   <Box sx={{ fontSize: 50, mr: 2 }}>{fact.icon}</Box>
                   <Box>
-                    <Slide>
+                    <Slide triggerOnce>
                       <CountUp
                         start={0}
                         end={fact.end}

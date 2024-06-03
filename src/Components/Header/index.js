@@ -20,6 +20,8 @@ import Skills from "../Skills";
 import Resume from "../Resume";
 // import Service from "../Services";
 import Contact from "../Contact";
+import Portfolio from "../Portfolio/Cards";
+// import Portfolio from "../Portfolio";
 
 const Header = () => {
   const menu = ["Home", "About", "Resume", "Portfolio", "Services", "Contact"];
@@ -122,7 +124,7 @@ const Header = () => {
         <Facts />
         <Skills />
         <Resume />
-        {/* <Service/> */}
+       <Portfolio/>
         <Contact />
       </div>
     </HeaderWrapper>

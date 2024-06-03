@@ -53,7 +53,7 @@ export default function Skills() {
           <Grid container spacing={4} className="skills-content">
             <Grid item xs={12} sm={6} data-aos="fade-up">
               {skills.slice(0, 3).map((skill, index) => (
-                <Slide direction={"left"}>
+                <Slide direction={"left"} triggerOnce>
                   <SkillWrapper key={index}>
                     <div className="skill">
                       <span>{skill.name}</span>
@@ -72,7 +72,7 @@ export default function Skills() {
             </Grid>
             <Grid item xs={12} sm={6} data-aos="fade-up" data-aos-delay="100">
               {skills.slice(3).map((skill, index) => (
-                <Slide direction={"right"}>
+                <Slide direction={"right"} triggerOnce>
                   <SkillWrapper key={index}>
                     <div className="skill">
                       <span>{skill.name}</span>
